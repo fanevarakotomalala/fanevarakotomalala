@@ -12,6 +12,7 @@ import BoardModerator from './Components/BoardModerator';
 import BoardUser from './Components/BoardUser';
 import * as AuthService from "./services/auth.service";
 import IUser from './types/user.type';
+import Inscription from './Components/inscription';
 
 
 
@@ -91,7 +92,7 @@ const App: React.FC = () => {
               </Link>
             </li>
             <li className="nav-item ">
-              <Link to={"/register"} className="nav-link focus ">
+              <Link to={"/inscription"} className="nav-link focus ">
                 S'inscrire
               </Link>
             </li>
@@ -103,6 +104,7 @@ const App: React.FC = () => {
           <Route  path="/" element= {<Home/>}/>
           <Route  path="/home" element= {<Home/>}/>
           <Route  path="/login" element= {<Login/>}/>
+          <Route  path="/inscription" element= {<Inscription/>}/>
           <Route  path="/register" element= {<Register/>}/>
           <Route  path="/profile" element= {<Profile/>}/>
           <Route  path="/user" element= {<BoardUser/>}/>

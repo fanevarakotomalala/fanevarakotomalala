@@ -89,3 +89,15 @@ a:hover{
 .focus:focus{
   color: royalblue;
 }
+.logotaxi{
+  width: 350px;
+  height: 350px;
+  margin-top: 80px;
+  margin-left: 30%;
+
+}
+.row{
+  display: flex;
+  justify-content: center;
+  margin-top: 200px;
+}

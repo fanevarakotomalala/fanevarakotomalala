@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { getPublicContent } from "../services/user.service";
+import logotaximoto from '../assets/logotaximoto.png';
 const Home: React.FC = () => {
   const [content, setContent] = useState<string>("");
   useEffect(() => {
@@ -18,9 +19,7 @@ const Home: React.FC = () => {
   }, []);
   return (
     <div className="container">
-      <header className="jumbotron">
-        <h3>{content}</h3>
-      </header>
+      <img src= {logotaximoto} alt="taximoto" className="logotaxi"  />
     </div>
   );
 };
