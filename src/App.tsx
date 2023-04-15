@@ -41,7 +41,7 @@ const App: React.FC = () => {
     <div>
       <nav className="navbar navbar-expand navbar-dark bg-dark fixed-top  ">
         <Link to={"/"} className="navbar-brand">
-          Menu
+          Moto Taxi
         </Link>
         <div className="navbar-nav mr-auto">
           <li className="nav-item ">

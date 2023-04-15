@@ -6,13 +6,13 @@ const Inscription:React.FC = () => {
          <div className="container">
             <div className="row">
                 <div className="col-6">
-                    <Link to={"/register"} className="nav-link">
+                    <Link to={"/register"} className="nav-link compte ">
                               <h2>Créer un compte chauffeur   <BsArrowRight/></h2>
                     </Link>
                     
                 </div>
                 <div className="col-6">
-                <Link to={"/register"} className="nav-link">
+                <Link to={"/register"} className="nav-link compte ">
                     <h2>Créer un compte passager   <BsArrowRight/></h2>
                 </Link>
                 </div>
