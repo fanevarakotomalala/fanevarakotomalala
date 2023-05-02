@@ -69,7 +69,7 @@ const Login : React.FC = () => {
                                             <span className="spinner-border spinner-border-sm"></span>
                                         )
                                     }
-                                     <span>Login</span>
+                                     <span>Se connecter</span>
                                 </button>
                             </div>
                             {
