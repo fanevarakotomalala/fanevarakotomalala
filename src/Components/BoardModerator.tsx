@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { getModeratorBoard} from "../services/user.service";
+import { getModeratorBoard} from "../services/driver.service";
 const BoardModerator: React.FC = () => {
   const [content, setContent] = useState<string>("");
   useEffect(() => {

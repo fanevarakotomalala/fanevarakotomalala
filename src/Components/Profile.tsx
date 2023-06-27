@@ -1,5 +1,5 @@
 import React from "react";
-import { getCurrentUser } from "../services/auth.service";
+import { getCurrentUser } from "../services/driverAuth.service";
 const Profile: React.FC = () => {
   const currentUser = getCurrentUser();
   return (
@@ -7,7 +7,7 @@ const Profile: React.FC = () => {
       <header className="jumbotron">
         <div className="text-center ">
           <h2 className="display-4">Profile</h2> 
-          <p className="font-weight-bold" >{currentUser.username}</p>
+          <p className="font-weight-bold" >{currentUser.drivername}</p>
         </div>
       </header>
       <p>

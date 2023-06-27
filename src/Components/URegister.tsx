@@ -1,26 +1,23 @@
 import React  , {useState} from 'react';
 import { Formik , Field , ErrorMessage, Form } from 'formik';
 import * as Yup from 'yup';
-import IDriver from '../types/driver.type';
-import { register } from '../services/driverAuth.service';
+import IUser from '../types/user.type';
+import { register } from '../services/auth.service';
 
 const Register : React.FC = () => {
     const [successfull , setSuccessfull] = useState<boolean>(false);
     const [message , setMessage] = useState<string>("");
 
-    const initialValues: IDriver = {
-        cin: "",
-        drivername:"",
-        surname:"",
-        email: "",
-        password: "",
-        adresse:""
+    const initialValues: IUser = {
+        username:"",
+        email:"",
+        password:"",
+        roles:[],
        
       };
 
     const validationSchema = Yup.object().shape({
-        cin:Yup.string().required("Ce champ est requis"),
-        drivername: Yup.string().test(
+        username: Yup.string().test(
             "len",
             "Le nom d'utilisateur doit être composé de 3 à 20 caractères.",
             (val:any) =>
@@ -29,7 +26,6 @@ const Register : React.FC = () => {
               val.toString().length <= 20
         )
         .required("Ce champ est requis"),
-        surname:Yup.string().required("Ce champ est requis"),
         email:Yup.string().email("Email invalide").required("Ce champ est requis"),
         password:Yup.string()
           .test(
@@ -41,12 +37,11 @@ const Register : React.FC = () => {
                 val.toString().length <= 40
           )
           .required("Ce champ est requis"),
-          adresse:Yup.string().required("Ce champ est requis"),
     });
     
-    const handleRegister = (formValue:IDriver) => {
-        const {cin , drivername , surname , email , password , adresse  } = formValue;
-        register(cin , drivername , surname , email ,password , adresse).then (
+    const handleRegister = (formValue:IUser) => {
+        const {username , email , password , roles } = formValue;
+        register( username ,  email ,password  , roles).then (
             (response) => {
                 setMessage(response.data.message);
                 setSuccessfull(true);
@@ -77,26 +72,10 @@ const Register : React.FC = () => {
                             !successfull && (
                                 <div>
                                     <div className="form-group">
-                                        <label htmlFor="cin">Cin</label>
-                                        <Field className="form-control" name="cin" type="text"/>
+                                        <label htmlFor="username">Nom d'utilisateur</label>
+                                        <Field className="form-control" name="username" type="text"/>
                                         <ErrorMessage
-                                          name='cin'
-                                          component="div"
-                                          className='alert alert-danger'/>
-                                    </div>
-                                    <div className="form-group">
-                                        <label htmlFor="drivername">Nom</label>
-                                        <Field className="form-control" name="drivername" type="text"/>
-                                        <ErrorMessage
-                                          name='drivername'
-                                          component="div"
-                                          className='alert alert-danger'/>
-                                    </div>
-                                    <div className="form-group">
-                                        <label htmlFor="surname">Prénom</label>
-                                        <Field className="form-control" name="surname" type="text"/>
-                                        <ErrorMessage
-                                          name='surname'
+                                          name='username'
                                           component="div"
                                           className='alert alert-danger'/>
                                     </div>
@@ -111,14 +90,6 @@ const Register : React.FC = () => {
                                     <div className="form-group">
                                         <label htmlFor="password">Mot de passe</label>
                                         <Field className="form-control" name="password" type="password"/>
-                                        <ErrorMessage
-                                          name='password'
-                                          component="div"
-                                          className='alert alert-danger'/>
-                                    </div>
-                                    <div className="form-group">
-                                        <label htmlFor="adresse">Adresse</label>
-                                        <Field className="form-control" name="adresse" type="text"/>
                                         <ErrorMessage
                                           name='password'
                                           component="div"

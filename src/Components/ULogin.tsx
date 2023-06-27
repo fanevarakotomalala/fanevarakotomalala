@@ -1,6 +1,6 @@
 import React , {useState} from 'react';
 import { Formik , Field , Form , ErrorMessage } from 'formik';
-import { login } from '../services/driverAuth.service';
+import { login } from '../services/auth.service';
 import * as Yup from "yup";
 import { useNavigate } from 'react-router-dom';
 
@@ -9,21 +9,21 @@ const Login : React.FC = () => {
         const [loading , setLoading] = useState<boolean>(false);
         const [message , setMessage] = useState<string>("");
         const initialValues : {
-            drivername:string,
+            username:string,
             password:string
         } = {
-            drivername:"",
+            username:"",
             password:""
         };
         const validationSchema = Yup.object().shape({
-            drivername:Yup.string().required("Ce champ est requis!"),
+            username:Yup.string().required("Ce champ est requis!"),
             password:Yup.string().required("Ce champ est requis!")
         });
-        const handleLogin = (formValue:{drivername:string , password:string}) => {
-            const {drivername , password} = formValue;
+        const handleLogin = (formValue:{username:string , password:string}) => {
+            const {username , password} = formValue;
             setMessage("");
             setLoading(true);
-            login (drivername , password).then(
+            login (username , password).then(
                 () => {
                    navigate('/profile');
                    window.location.reload();
@@ -53,9 +53,9 @@ const Login : React.FC = () => {
                     >
                           <Form>
                             <div className="form-group">
-                                <label htmlFor="drivername">Nom d'utilisateur</label>
-                                <Field name="drivername" type = "text" className="form-control"/>
-                                <ErrorMessage name='drivername' component="div" className='alert alert-danger'/>
+                                <label htmlFor="username">Nom d'utilisateur</label>
+                                <Field name="username" type = "text" className="form-control"/>
+                                <ErrorMessage name='username' component="div" className='alert alert-danger'/>
                             </div>
                             <div className="form-group">
                                 <label htmlFor="password">Mot de passe</label>

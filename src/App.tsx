@@ -10,16 +10,17 @@ import Profile from './Components/Profile';
 import BoardAdmin from './Components/BoardAdmin';
 import BoardModerator from './Components/BoardModerator';
 import BoardUser from './Components/BoardUser';
-import * as AuthService from "./services/auth.service";
-import IUser from './types/user.type';
+import * as AuthService from "./services/driverAuth.service";
+import IDriver from './types/driver.type';
 import Inscription from './Components/inscription';
+import { FaSignInAlt , FaSignOutAlt , FaPersonBooth , FaHome , FaUserAlt , FaSave   } from 'react-icons/fa';
 
 
 
 const App: React.FC = () => {
   const [showModeratorBoard, setShowModeratorBoard] = useState<boolean>(false);
   const [showAdminBoard, setShowAdminBoard] = useState<boolean>(false);
-  const [currentUser, setCurrentUser] = useState<IUser | undefined>(undefined);
+  const [currentUser, setCurrentUser] = useState<IDriver | undefined>(undefined);
   useEffect(() => {
     const user = AuthService.getCurrentUser();
     if (user) {
@@ -46,27 +47,27 @@ const App: React.FC = () => {
         <div className="navbar-nav mr-auto">
           <li className="nav-item ">
             <Link to={"/home"} className="nav-link focus ">
-              Home
+              <FaHome/>  Home
             </Link>
           </li>
           {showModeratorBoard && (
             <li className="nav-item ">
               <Link to={"/mod"} className="nav-link focus ">
-                Moderator Board
+                <FaPersonBooth/>  Moderator Board
               </Link>
             </li>
           )}
           {showAdminBoard && (
             <li className="nav-item ">
               <Link to={"/admin"} className="nav-link focus ">
-                Admin Board
+                 <FaPersonBooth/>  Admin Board
               </Link>
             </li>
           )}
           {currentUser && (
             <li className="nav-item ">
               <Link to={"/user"} className="nav-link focus ">
-                User
+                 <FaPersonBooth/> User
               </Link>
             </li>
           )}
@@ -75,12 +76,12 @@ const App: React.FC = () => {
           <div className="navbar-nav ml-auto">
             <li className="nav-item ">
               <Link to={"/profile"} className="nav-link  focus">
-                {currentUser.username}
+                     <FaUserAlt/>  {currentUser.drivername}
               </Link>
             </li>
             <li className="nav-item ">
               <a href="/login" className="nav-link focus " onClick={logOut}>
-                Deconnexion
+                 <FaSignOutAlt />  Deconnexion
               </a>
             </li>
           </div>
@@ -88,12 +89,12 @@ const App: React.FC = () => {
           <div className="navbar-nav ml-auto">
             <li className="nav-item ">
               <Link to={"/login"} className="nav-link focus ">
-               Se connecter
+                  <FaSignInAlt /> Se connecter
               </Link>
             </li>
             <li className="nav-item ">
               <Link to={"/inscription"} className="nav-link focus ">
-                S'inscrire
+                    <FaSave /> S'inscrire
               </Link>
             </li>
           </div>
