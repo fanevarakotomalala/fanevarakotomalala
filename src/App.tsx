@@ -14,6 +14,7 @@ import * as AuthService from "./services/driverAuth.service";
 import IDriver from './types/driver.type';
 import Inscription from './Components/inscription';
 import { FaSignInAlt , FaSignOutAlt , FaPersonBooth , FaHome , FaUserAlt , FaSave   } from 'react-icons/fa';
+import ULogin from './Components/ULogin';
 
 
 
@@ -88,7 +89,7 @@ const App: React.FC = () => {
          ) : (
           <div className="navbar-nav ml-auto">
             <li className="nav-item ">
-              <Link to={"/login"} className="nav-link focus ">
+              <Link to={"/ulogin"} className="nav-link focus ">
                   <FaSignInAlt /> Se connecter
               </Link>
             </li>
@@ -111,6 +112,7 @@ const App: React.FC = () => {
           <Route  path="/user" element= {<BoardUser/>}/>
           <Route  path="/mod" element= {<BoardModerator/>}/>
           <Route  path="/admin" element= {<BoardAdmin/>}/>
+          <Route  path="/ulogin" element= {<ULogin/>}/>
         </Routes>
       </div>
     </div>
