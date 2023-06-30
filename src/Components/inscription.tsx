@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import { BsArrowRight } from "react-icons/bs";
 const Inscription:React.FC = () => {
     return (
-         <div className="container">
-            <div className="row">
+         <div className="container wrapper">
+            <div className="row main-content">
                 <div className="col-6">
                     <Link to={"/register"} className="nav-link compte ">
                               <h2>Créer un compte chauffeur   <BsArrowRight/></h2>

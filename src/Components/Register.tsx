@@ -67,8 +67,8 @@ const Register : React.FC = () => {
     };
 
     return(
-        <div className="col-md-12">
-            <div className="card card-container">
+        <div className="col-md-12 wrapper">
+            <div className="card card-container main-content">
                 <h2>Inscription</h2>
                 <Formik initialValues={initialValues} validationSchema = {validationSchema} 
                 onSubmit={handleRegister}>

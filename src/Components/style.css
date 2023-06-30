@@ -37,4 +37,22 @@
      text-align: center;
     
   }
+  .containers{
+    margin-top: 15%;
+    margin-bottom: 10%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .card{
+    width: 600px;
+    height:470px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+  }
+  .texte{
+    margin-right: 60px;
+    margin-top: 20px;
+  }
   

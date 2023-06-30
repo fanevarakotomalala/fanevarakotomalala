@@ -11,7 +11,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-.border¨{
+.bordur¨{
   border-radius: 1rem 0 0 1rem
 }
 .Colors{
@@ -19,4 +19,36 @@ code {
 }
 .Space{
   letter-spacing: 1px;
+}
+.couleur{
+  color: #ff6219;
+}
+.bg{
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.wrapper{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.main-content{
+  flex-grow: 1;
+}
+.login-btn{
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
+.login{
+  margin-bottom: 30%;
+  margin-top: -20%;
+}
+.divider{
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: solid rgba(0, 0, 0, 0.3);
+  border-bottom-width: 0.5px;
+}
+.navbar{
+  background-color: white;
 }

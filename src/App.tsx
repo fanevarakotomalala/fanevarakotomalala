@@ -13,8 +13,11 @@ import BoardUser from './Components/BoardUser';
 import * as AuthService from "./services/driverAuth.service";
 import IDriver from './types/driver.type';
 import Inscription from './Components/inscription';
-import { FaSignInAlt , FaSignOutAlt , FaPersonBooth , FaHome , FaUserAlt , FaSave   } from 'react-icons/fa';
+import { FaSignInAlt , FaSignOutAlt , FaPersonBooth , FaHome , FaUserAlt , FaSave ,  
+         FaFacebook , FaTwitter , FaGoogle , FaLinkedin , FaInstagram , FaGithub} from 'react-icons/fa';
 import ULogin from './Components/ULogin';
+import Contact from './Components/contact';
+
 
 
 
@@ -40,15 +43,20 @@ const App: React.FC = () => {
   };
 
   return (
-    <div>
-      <nav className="navbar navbar-expand navbar-dark bg-dark fixed-top  ">
+    <div className='wrapper'>
+      <nav className="navbar navbar-expand navbar-light text-dark shadow  fixed-top main-content  ">
         <Link to={"/"} className="navbar-brand">
-          Moto Taxi
+           TM
         </Link>
         <div className="navbar-nav mr-auto">
           <li className="nav-item ">
             <Link to={"/home"} className="nav-link focus ">
               <FaHome/>  Home
+            </Link>
+          </li>
+          <li className="nav-item ">
+            <Link to={"/contact"} className="nav-link focus ">
+                Contact
             </Link>
           </li>
           {showModeratorBoard && (
@@ -113,9 +121,39 @@ const App: React.FC = () => {
           <Route  path="/mod" element= {<BoardModerator/>}/>
           <Route  path="/admin" element= {<BoardAdmin/>}/>
           <Route  path="/ulogin" element= {<ULogin/>}/>
+          <Route  path="/contact" element= {<Contact/>}/>
         </Routes>
       </div>
-    </div>
+      <footer className="bg-dark text-center text-white">
+          <div className="container p-4 pb-0">
+              <section className="mb-4">
+                 <a className ="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                  <FaFacebook/>
+                 </a>
+  
+                 <a className="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                    <FaTwitter/>
+                 </a>
+                 <a className="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                    <FaGoogle/>
+                 </a>
+                 <a className="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                    <FaInstagram/>
+                 </a>
+                 <a className="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                    <FaLinkedin/>
+                 </a>
+                 <a className="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                    <FaGithub/>
+                 </a>
+               </section>
+          </div>
+          <div className="text-center p-3 bg" >
+                 © 2023 Copyright:
+                <a className="text-white" href="https://taximoto.com/">TaxiMoto.com</a>
+          </div>
+     </footer>
+   </div>
   );
 }
 export default App;
