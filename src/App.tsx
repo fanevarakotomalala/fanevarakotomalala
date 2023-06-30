@@ -14,7 +14,7 @@ import * as AuthService from "./services/driverAuth.service";
 import IDriver from './types/driver.type';
 import Inscription from './Components/inscription';
 import { FaSignInAlt , FaSignOutAlt , FaPersonBooth , FaHome , FaUserAlt , FaSave ,  
-         FaFacebook , FaTwitter , FaGoogle , FaLinkedin , FaInstagram , FaGithub} from 'react-icons/fa';
+         FaFacebook , FaTwitter , FaGoogle , FaLinkedin , FaInstagram , FaGithub , FaMailBulk} from 'react-icons/fa';
 import ULogin from './Components/ULogin';
 import Contact from './Components/contact';
 
@@ -56,7 +56,7 @@ const App: React.FC = () => {
           </li>
           <li className="nav-item ">
             <Link to={"/contact"} className="nav-link focus ">
-                Contact
+                <FaMailBulk/> Contact
             </Link>
           </li>
           {showModeratorBoard && (
@@ -97,7 +97,7 @@ const App: React.FC = () => {
          ) : (
           <div className="navbar-nav ml-auto">
             <li className="nav-item ">
-              <Link to={"/ulogin"} className="nav-link focus ">
+              <Link to={"/login"} className="nav-link focus ">
                   <FaSignInAlt /> Se connecter
               </Link>
             </li>

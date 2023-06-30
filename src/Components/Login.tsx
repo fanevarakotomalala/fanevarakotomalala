@@ -3,6 +3,8 @@ import { Formik , Field , Form , ErrorMessage } from 'formik';
 import { login } from '../services/driverAuth.service';
 import * as Yup from "yup";
 import { useNavigate } from 'react-router-dom';
+import { FaFacebook , FaLinkedin , FaTwitter } from 'react-icons/fa';
+import draw2 from '../assets/draw2.webp'
 
 const Login : React.FC = () => {
         let navigate = useNavigate();
@@ -43,49 +45,87 @@ const Login : React.FC = () => {
         };
 
         return(
-            <div className="col-md-12 ">
-                <div className="card card-container">
-                    <h2>Connexion</h2>
-                    <Formik
-                      initialValues= {initialValues}
-                      validationSchema = {validationSchema}
-                      onSubmit = {handleLogin}
-                    >
-                          <Form>
-                            <div className="form-group">
-                                <label htmlFor="drivername">Nom d'utilisateur</label>
-                                <Field name="drivername" type = "text" className="form-control"/>
-                                <ErrorMessage name='drivername' component="div" className='alert alert-danger'/>
-                            </div>
-                            <div className="form-group">
-                                <label htmlFor="password">Mot de passe</label>
-                                <Field name="password" type = "password" className="form-control"/>
-                                <ErrorMessage name='password' component="div" className='alert alert-danger'/>
-                            </div>
-                            <div className="form-group">
-                                <button type = "submit" className="btn btn-primary btn-block" disabled={loading}>
-                                    {
-                                        loading && (
-                                            <span className="spinner-border spinner-border-sm"></span>
-                                        )
-                                    }
-                                     <span>Se connecter</span>
-                                </button>
-                            </div>
-                            {
-                                message && (
-                                    <div className="form-group">
-                                        <div className="alert alert-danger" role= "alert">
-                                            {message}
-                                        </div>
-                                    </div>
-                                )
-                            }
-                          </Form>
-                    </Formik>
-                </div>
-            </div>
-        );
+            <div className="vh-100 wrapper login  ">
+                <div className='container-fluid h-custom main-content '>
+                   <div className='row d-flex justify-content-center align-items-center h-100'>
+                      <div className='col-md-9 col-lg-6 col-xl-5'>
+                         <img src= {draw2} alt="sample" className='img-fluid' />
+                      </div>
+                      <div className='col-md-8  col-lg-6 col-xl-4 offset-xl-1'>
+                        <Formik 
+                           initialValues= {initialValues} 
+                           validationSchema = {validationSchema} 
+                           onSubmit = {handleLogin}>
+                              <Form>
+                                  <div className='d-flex flex-row align-items-center justify-content-center justify-content-lg-start'>
+                                      <p className="lead fw-normal mb-0 mr-2 me-3">Se connecter avec</p>
+                                      <button type="button" className="btn btn-primary btn-floating mx-1">
+                                          <FaFacebook/>
+                                       </button>
+                                       <button type="button" className="btn btn-primary btn-floating mx-1">
+                                          <FaTwitter/>
+                                       </button>
+                                       <button type="button" className="btn btn-primary btn-floating mx-1">
+                                          <FaLinkedin/>
+                                       </button>
+                                  </div>
+                                  <div className='divider d-flex align-items-center my-4'>
+                                    <p className='text-center fw-bold mx-2 mb-2'>Ou</p>
+                                  </div>
+                                  <div className="form-outline mb-4">
+                                     <label htmlFor="drivername" className='form-label' >Nom d'utilisateur</label>
+                                     <Field name="drivername" type = "text" className="form-control form-control-lg"/>
+                                     <ErrorMessage name='drivername' component="div" className='alert alert-danger'/>
+                                  </div>
+                                  <div className="form-outline mb-4">
+                                    <label htmlFor="password" className='form-label'>Mot de passe</label>
+                                    <Field name="password" type = "password" className="form-control form-control-lg"/>
+                                    <ErrorMessage name='password' component="div" className='alert alert-danger'/>
+                                  </div>
+                                  <div className='d-flex justify-content-between align-items-center'>
+                                     <div className='form-check mb-0'>
+                                        <input className="form-check-input me-2" type="checkbox" value="" id="form2Example3" />
+                                        <label className="form-check-label" htmlFor="form2Example3">
+                                            Se souvenir de moi
+                                         </label>
+                                     </div>
+                                     <a href="#!" className="text-body">Mot de passe oublié?</a>
+                                  </div>
+                                  <div className='text-center text-lg-start mt-4 pt-2'>
+                                    <button className='btn btn-primary btn-lg login-btn' disabled={loading}>
+                                       {
+                                            loading && (
+                                                            <span className="spinner-border spinner-border-sm"></span>
+                                                        )
+                                       }               
+                                        <span>Se connecter</span>                                    
+                                    </button>
+                                    <p className='"small fw-bold mt-2 pt-1 mb-0'>
+                                            vous n'avez pas de compte?
+                                            <a href="#!" className='link-danger'>Inscription</a>
+                                    </p>
+                                      {
+                                            message && (
+                                                            <div className="form-group">
+                                                                <div className="alert alert-danger" role= "alert">
+                                                                    {message}
+                                                                </div>
+                                                            </div>
+                                                        )
+                                      }
+                                    
+                                  </div>
+                              </Form>
+                        </Formik>
+
+                      </div>
+                      
+                   </div>
+                </div>                                                                                                                
+                              
+        </div>
+          
+    );
    
 };
 export default Login

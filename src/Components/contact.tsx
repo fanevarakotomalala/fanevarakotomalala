@@ -7,7 +7,7 @@ const Contact:React.FC = () => {
             <div className='texte'>
                 <h2>Vous avez des questions? Nous serons ravis de vous répondre.</h2>
             </div>
-            <div className='card card-container bg-light'>
+            <div className='carte card card-container bg-light'>
                 <h3 className='pb-3 pt-3'>Contactez-nous</h3>
                 <div className="form-group">
                     <label htmlFor="Nom">Nom et prenom</label>

@@ -19,8 +19,8 @@ const BoardUser: React.FC = () => {
     );
   }, []);
   return (
-    <div className="container">
-      <header className="jumbotron">
+    <div className="container wrapper">
+      <header className="jumbotron ">
         <h3>{content}</h3>
       </header>
     </div>
