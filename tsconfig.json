@@ -19,11 +19,6 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "plugins" : [
-       {
-        "name":"typescipt-plugin-dotenv"
-       }
-    ]
   },
   "include": [
     "src"
