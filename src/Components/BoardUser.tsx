@@ -1,28 +1,19 @@
-import React, { useState, useEffect } from "react";
-import { getUserBoard } from "../services/driver.service";
+import React, { useState} from "react";
+
+import Maps from "./Maps";
+
 const BoardUser: React.FC = () => {
-  const [content, setContent] = useState<string>("");
-  useEffect(() => {
-    getUserBoard().then(
-      (response) => {
-        setContent(response.data);
-      },
-      (error) => {
-        const _content =
-          (error.response &&
-            error.response.data &&
-            error.response.data.message) ||
-          error.message ||
-          error.toString();
-        setContent(_content);
-      }
-    );
-  }, []);
+  const [destination , setDestination] =useState("");
+  const handleSearch = (event:React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+  }
   return (
     <div className="container wrapper">
-      <header className="jumbotron ">
-        <h3>{content}</h3>
-      </header>
+       <form onSubmit={handleSearch}>
+           <input type="text" onChange={(event) => setDestination(event.target.value)} className="form-control" />
+           <button className="btn btn-primary">Rechercher</button>
+       </form>
+       <Maps destination={destination}/>
     </div>
   );
 };

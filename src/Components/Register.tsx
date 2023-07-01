@@ -75,13 +75,12 @@ const Register : React.FC = () => {
                  <div className='row gx-lg-5 align-items-center mb-5'>
                     <div className='col-lg-6 mb-5 mb-lg-0 zindex' >
                        <h1 className='my-5 display-5 fw-bold ls-tight'>
-                                Nous vous offrons  <br />
-                                <span>le meilleur service</span>
+                                 Un offre de travail <br />
+                                <span>pour les coursiers</span>
                        </h1>
                        <p className='mb-4 opacity-70'>
-                            Inscrivez-vous pour bénéficier 100% de nos services.
-                            Avec votre compte , vous pouvez appeler un chauffeur dans votre
-                            ville à tout moment.
+                            Si vous cherchez un travail de chauffeur , vous frappez à la bonne porte.
+                            Inscrivez-vous et devenez l'un de nos chauffeurs.
                        </p>
                     </div>
                     <div className='col-lg-6 mb-5 mb-lg-0 position-relative'>

@@ -5,7 +5,7 @@ import IUser from '../types/user.type';
 import { register } from '../services/auth.service';
 import { FaFacebook , FaGoogle , FaTwitter , FaGithub } from 'react-icons/fa';
 
-const Register : React.FC = () => {
+const URegister : React.FC = () => {
     const [successfull , setSuccessfull] = useState<boolean>(false);
     const [message , setMessage] = useState<string>("");
 
@@ -89,87 +89,52 @@ const Register : React.FC = () => {
                                         <Form>
                                             {
                                                 !successfull && (
-                                                     <div>
-                                                         <div className="form-outline mb-4">
-                                                            <label htmlFor="cin" className='form-label'>Cin</label>                                               
-                                                            <Field className="form-control" name="cin" type="text"/>                                                           
-                                                            <ErrorMessage
-                                                              name='cin'
-                                                              component="div"
-                                                              className='alert alert-danger'/>
-                                                         </div>
-                                                         <div className="row">
-                                                            <div className='col-md-6 mb-4'>
-                                                                <div className="form-outline">
-                                                                   <label htmlFor="drivername" className='form-label'>Nom</label>
-                                                                   <Field className="form-control" name="drivername" type="text"/>                                                          
+                                                     <div>                                                       
+                                                                                                                 
+                                                             <div className="form-outline mb-4">
+                                                                   <label htmlFor="username" className='form-label'>Nom </label>
+                                                                   <Field className="form-control" name="username" type="text"/>                                                          
                                                                    <ErrorMessage
-                                                                       name='drivername'
+                                                                       name='username'
                                                                        component="div"
                                                                        className='alert alert-danger'/>
-                                                                 </div>
-                                                    
-                                                            </div>
-                                                            <div className="col-md-6 mb-4">
-                                                                <div className="form-outline">
-                                                                    <label htmlFor="surname"className='form-label'>Prénom</label>                                                      
-                                                                    <Field className="form-control" name="surname" type="text"/>                                                        
-                                                                    <ErrorMessage
-                                                                       name='surname'
-                                                                       component="div"
-                                                                       className='alert alert-danger'/>
-                                                                </div>
-                                                           </div>
-                                                         </div>
-                                                         <div className="row">
-                                                            <div className='col-md-6 mb-4'>
-                                                               <div className="form-outline">
+                                                             </div>                                                                                                               
+                                                            
+                                                                                                                                                                                                          
+                                                            
+                                                             <div className="form-outline mb-4">
                                                                        <label htmlFor="email" className='form-label'>Email</label>
                                                                        <Field className="form-control" name="email" type="email"/>                                                               
                                                                        <ErrorMessage
                                                                          name='email'
                                                                          component="div"
                                                                          className='alert alert-danger'/>
-                                                                </div>
+                                                             </div>                                                                                                         
+                                                             <div className='form-outline mb-4'>    
+                                                                <label htmlFor="password" className='form-label'>Mot de passe</label>                                            
+                                                                <Field className="form-control" name="password" type="password"/>
+                                                                <ErrorMessage
+                                                                   name='password'
+                                                                   component="div"
+                                                                   className='alert alert-danger'/>
 
-                                                            </div>
-                                                            <div className='col-md-6 mb-4'>
-                                                                    <div className="form-outline">  
-                                                                        <label htmlFor="adresse" className='form-label'>Adresse</label>                                                    
-                                                                         <Field className="form-control" name="adresse" type="text"/>
-                                                                         <ErrorMessage
-                                                                           name='adresse'
-                                                                           component="div"
-                                                                           className='alert alert-danger'/>
-                                                                    </div>
-
-                                                            </div>
-                                                         </div>
-                                                        <div className='form-outline mb-4'>    
-                                                           <label htmlFor="password" className='form-label'>Mot de passe</label>                                            
-                                                           <Field className="form-control" name="password" type="password"/>
-                                                           <ErrorMessage
-                                                               name='password'
-                                                               component="div"
-                                                               className='alert alert-danger'/>
-
-                                                        </div>
-                                            <button type='submit' className="btn btn-primary btn-block mb-4">S'inscrire</button>
-                                            <div className="text-center">
-                                               <p>ou s'inscrire avec:</p>
-                                               <button type="button" className="btn btn-link btn-floating mx-1">
-                                                  <FaFacebook/>
-                                               </button>
-                                               <button type="button" className="btn btn-link btn-floating mx-1">
-                                                   <FaGoogle/>
-                                               </button>
-                                               <button type="button" className="btn btn-link btn-floating mx-1">
-                                                  <FaTwitter/>
-                                               </button>
-                                               <button type="button" className="btn btn-link btn-floating mx-1">
-                                                  <FaGithub/>
-                                               </button>
-                                            </div>
+                                                             </div>
+                                                             <button type='submit' className="btn btn-primary btn-block mb-4">S'inscrire</button>
+                                                             <div className="text-center">
+                                                                <p>ou s'inscrire avec:</p>
+                                                                 <button type="button" className="btn btn-link btn-floating mx-1">
+                                                                      <FaFacebook/>
+                                                                 </button>
+                                                                 <button type="button" className="btn btn-link btn-floating mx-1">
+                                                                      <FaGoogle/>
+                                                                 </button>
+                                                                 <button type="button" className="btn btn-link btn-floating mx-1">
+                                                                      <FaTwitter/>
+                                                                  </button>
+                                                                  <button type="button" className="btn btn-link btn-floating mx-1">
+                                                                        <FaGithub/>
+                                                                  </button>
+                                                              </div>
                                                      </div>
                                                       
                                                 )
@@ -204,5 +169,5 @@ const Register : React.FC = () => {
     );
     
 };
-export default Register;
+export default URegister;
 

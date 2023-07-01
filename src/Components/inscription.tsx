@@ -12,7 +12,7 @@ const Inscription:React.FC = () => {
                     
                 </div>
                 <div className="col-6">
-                <Link to={"/register"} className="nav-link compte ">
+                <Link to={"/uregister"} className="nav-link compte ">
                     <h2>Créer un compte passager   <BsArrowRight/></h2>
                 </Link>
                 </div>

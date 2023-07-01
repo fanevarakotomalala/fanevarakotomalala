@@ -17,6 +17,7 @@ import { FaSignInAlt , FaSignOutAlt , FaPersonBooth , FaHome , FaUserAlt , FaSav
          FaFacebook , FaTwitter , FaGoogle , FaLinkedin , FaInstagram , FaGithub , FaMailBulk} from 'react-icons/fa';
 import ULogin from './Components/ULogin';
 import Contact from './Components/contact';
+import URegister from './Components/URegister';
 
 
 
@@ -98,7 +99,7 @@ const App: React.FC = () => {
           <div className="navbar-nav ml-auto">
             <li className="nav-item ">
               <Link to={"/login"} className="nav-link focus ">
-                  <FaSignInAlt /> Se connecter
+                  <FaSignInAlt /> Connexion
               </Link>
             </li>
             <li className="nav-item ">
@@ -122,6 +123,7 @@ const App: React.FC = () => {
           <Route  path="/admin" element= {<BoardAdmin/>}/>
           <Route  path="/ulogin" element= {<ULogin/>}/>
           <Route  path="/contact" element= {<Contact/>}/>
+          <Route  path="/uregister" element= {<URegister/>}/>
         </Routes>
       </div>
       <footer className="bg-dark text-center text-white">

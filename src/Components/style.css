@@ -43,7 +43,7 @@
   }
   .carte{
     width: 600px;
-    height:470px;
+    height:520px;
     padding-left: 20px;
     padding-right: 20px;
     padding-bottom: 20px;
@@ -51,5 +51,8 @@
   .texte{
     margin-right: 60px;
     margin-top: 20px;
+  }
+  .button{
+    width: 100px;
   }
   

@@ -21,6 +21,7 @@ const Contact:React.FC = () => {
                     <label htmlFor="message">Message</label>
                     <textarea name="message"  className='form-control form-control-lg'  rows={4}></textarea>
                 </div>
+                <button className='btn btn-primary button'>Envoyer</button>
             </div>
          </div>
      );

@@ -5,6 +5,7 @@ import * as Yup from "yup";
 import { useNavigate } from 'react-router-dom';
 import { FaFacebook , FaLinkedin , FaTwitter } from 'react-icons/fa';
 import draw2 from '../assets/draw2.webp'
+import { Link } from 'react-router-dom';
 
 const ULogin : React.FC = () => {
         let navigate = useNavigate();
@@ -58,7 +59,7 @@ const ULogin : React.FC = () => {
                            onSubmit = {handleLogin}>
                               <Form>
                                   <div className='d-flex flex-row align-items-center justify-content-center justify-content-lg-start'>
-                                      <p className="lead fw-normal mb-0 me-3">Se connecter avec</p>
+                                      <p className="lead fw-normal mb-0 mr-2 me-3">Se connecter avec</p>
                                       <button type="button" className="btn btn-primary btn-floating mx-1">
                                           <FaFacebook/>
                                        </button>
@@ -70,7 +71,7 @@ const ULogin : React.FC = () => {
                                        </button>
                                   </div>
                                   <div className='divider d-flex align-items-center my-4'>
-                                    <p className='text-center fw-bold mx-2 mb-0'>Ou</p>
+                                    <p className='text-center fw-bold mx-2 mb-2'>Ou</p>
                                   </div>
                                   <div className="form-outline mb-4">
                                      <label htmlFor="username" className='form-label' >Nom d'utilisateur</label>
@@ -102,7 +103,7 @@ const ULogin : React.FC = () => {
                                     </button>
                                     <p className='"small fw-bold mt-2 pt-1 mb-0'>
                                             vous n'avez pas de compte?
-                                            <a href="#!" className='link-danger'>Inscription</a>
+                                            <Link to={"/uregister"} className='nav-link'>Inscription</Link>
                                     </p>
                                       {
                                             message && (

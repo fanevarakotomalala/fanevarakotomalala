@@ -5,6 +5,7 @@ import * as Yup from "yup";
 import { useNavigate } from 'react-router-dom';
 import { FaFacebook , FaLinkedin , FaTwitter } from 'react-icons/fa';
 import draw2 from '../assets/draw2.webp'
+import { Link } from 'react-router-dom';
 
 const Login : React.FC = () => {
         let navigate = useNavigate();
@@ -102,7 +103,7 @@ const Login : React.FC = () => {
                                     </button>
                                     <p className='"small fw-bold mt-2 pt-1 mb-0'>
                                             vous n'avez pas de compte?
-                                            <a href="#!" className='link-danger'>Inscription</a>
+                                            <Link to={"/register"} className='nav-link'>Inscription</Link>
                                     </p>
                                       {
                                             message && (
